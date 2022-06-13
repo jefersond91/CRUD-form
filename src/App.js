@@ -45,14 +45,9 @@ function App() {
         axios.put(`https://users-crud1.herokuapp.com/users/${userSelected.id}/`, userEdited)
         .then(()=> getUsers())
     }
-    
-    const [showModal, setShowModal] = useState(false);
-
 
     return (
         <div className="App">
-            <button onClick={() => setShowModal(true)}>Abrir modal</button>
-                {showModal && <Modal close={() => setShowModal(false)} />}
             <UsersForm 
                 addUser={addUser} 
                 userSelected ={userSelected}
